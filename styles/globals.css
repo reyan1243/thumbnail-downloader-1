@@ -1,7 +1,15 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-* {
-  background-color: #1f1f1f;
+html {
+  scroll-behavior: smooth;
+}
+
+.home {
+  background-image: url('bg-image.png');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
