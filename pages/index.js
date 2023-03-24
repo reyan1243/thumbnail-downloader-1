@@ -6,8 +6,6 @@ import Footer  from '../components/Footer'
 import NavBar from '../components/NavBar'
 
 
-const API_KEY = "AIzaSyACPM0TZZr4L2pf4vtgceXtLJlwbQsDOF4"
-
 export default function Home() {
   const [search, setSearch] = useState("")
   const [ytimage, setYtimage] = useState(null)
