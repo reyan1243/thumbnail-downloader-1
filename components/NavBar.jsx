@@ -11,6 +11,15 @@ function NavBar() {
 
   return (
     <div className='h-24 flex sm:gap-36 gap-18 items-center justify-center max-w-[1280px] mx-auto px-4 text-white'>
+      <h1 className='w-full sm:text-3xl md:text-4xl text-2xl font-bold text-[#00df9a]'>
+        {/* <link to="/"> */}
+        <span className='text-red-600'>Yt</span>
+        Thumb
+
+        <span className='text-white'>.</span>
+        <span className='text-red-600'>nail</span>
+        {/* </link> */}
+      </h1>
       <ul className='text-xl md:flex hidden '>
         {/* <link to="/home"> */}
         <li className='p-4 cursor-pointer text-[#FF2E00] underline'>
@@ -37,13 +46,20 @@ function NavBar() {
       <div
         className={
           !nav
-            ? 'fixed left-0 top-0 w-[60%] h-full border-r border-r-gray-900 bg-[#000300] ease-in-out duration-500'
+            ? 'fixed left-0 top-0 w-[60%] h-full border-r md:fixed md:left-[-100%] border-r-gray-900 bg-[#000300] ease-in-out duration-500'
             : 'fixed left-[-100%]'
         }
       >
-        <h1 className='w-full text-3xl font-bold text-[#FF2E00] m-4'>
-          YouTube Thumbnail Downloader
+        <h1 className='w-full ml-4 mt-6 sm:text-3xl md:text-4xl text-2xl  font-bold text-[#00df9a]'>
+          {/* <link to="/"> */}
+          <span className='text-red-600'>Yt</span>
+          Thumb
+
+          <span className='text-white'>.</span>
+          <span className='text-red-600'>nail</span>
+          {/* </link> */}
         </h1>
+        
         <ul className='p-4 uppercase'>
           <li className='p-4 border-b border-b-gray-700 cursor-pointer'>
             <Link href='#home'>Home</Link>

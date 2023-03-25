@@ -59,41 +59,50 @@ export default function Home() {
         id='home'
       >
         <NavBar />
-        <div className=' sm:py-12 py-8 flex flex-col items-center justify-center h-[600px]'>
-          <h1 className='max-w-[1240px] px-2 mb-4 md:text-5xl sm:text-4xl text-2xl font-extrabold mx-auto text-white'>
+        <div className={ytimage === null ? "sm:py-32 py-4 flex flex-col items-center justify-center mx-auto" :"sm:py-12 py-3 flex flex-col items-center justify-center mx-auto"}>
+          <h1 className='max-w-[1240px] px-2 mb-4 ld:text-5xl md:text-4xl sm:3xl text-2xl sm:mx-auto ml-6 font-extrabold text-center text-white'>
             YouTube Thumbnail downloader
           </h1>
-
-          <p>
-            Free, Fast and Easy Image Downloader - Download Your Favorite Images
+          
+          <div className='flex sm:flex-row flex-col items-center text-center'>
+          <p className='px-4'>
+            Free, Fast and Easy Image Downloader 
+          </p>
+          <p className='sm:block hidden'>-</p>
+          <p className='px-4'>
+            Download Your Favorite Images
             Now!
           </p>
-          <div>
+          </div>
+
+          <div className='text-white max-w-[1240px] flex flex-col sm:flex-row items-center justify-center mx-auto sm:py-2 py-1 px-4'>
             <input
               value={search}
               onChange={(e) => setSearch(e.target.value)}
-              className='p-3 lg:w-[40rem] md:w-[32rem] sm:w-[28rem] w-[18rem] border-2 rounded-md text-black outline-none border-none'
+              className='p-3 lg:w-[40rem] md:w-[32rem] sm:w-[25rem] w-[17rem] border-2 rounded-md text-black outline-none border-none'
               type='text'
               name='search'
               placeholder='Paste YouTube video URL'
             />
             <button
               onClick={extractVideoId}
-              className='bg-[#FF2E00] hover:bg-[#eb360d] ml-2 p-3 w-[200px] rounded-lg my-6 text-black font-bold'
+              className='bg-[#FF2E00] hover:bg-[#eb360d] ml-2 p-3 w-[200px] rounded-lg sm:my-6 my-4 text-black font-bold'
             >
               Search
             </button>
           </div>
-          {error && <div className='text-3xl text-[#DE1B55] '>{error}</div>}
-          <div className=' mx-auto max-w-[1240px] sm:mt-4 md:mt-12 '>
+
+          {/* {error && <div className='text-3xl text-[#DE1B55] '>{error}</div>} */}
+
+          <div className=' mx-auto max-w-[1240px] h-[22rem] sm:mt-2 md:mt-12 mt-[0.2rem]'>
             <DownloadSection ytimage={ytimage} />
           </div>
 
-          <div className='mt-52 flex items-center justify-center gap-10'>
+          {/* <div className=' flex items-center justify-center gap-10'>
             <div className='flex flex-col items-center justify-center'>
               <AiOutlineCloudDownload
                 color='FF2E00'
-                size={50}
+                // size={50}
               />
               <p className='text-xl'>High-speed downloading</p>
             </div>
@@ -101,7 +110,7 @@ export default function Home() {
             <div className='flex flex-col items-center justify-center'>
               <AiOutlineSmile
                 color='FF2E00'
-                size={50}
+                // size={50}
               />
               <p className='text-xl'>No registration required</p>
             </div>
@@ -109,59 +118,66 @@ export default function Home() {
             <div className='flex flex-col items-center justify-center'>
               <AiOutlineUnlock
                 color='FF2E00'
-                size={50}
+                // size={50}
               />
               <p className='text-xl'>Secure downloading</p>
             </div>
-          </div>
+          </div> */}
         </div>
       </section>
       <section
         id='about'
         className=''
       >
-        <div className='flex p-24 items-center justify-around'>
-          <div className='flex flex-col gap-5 w-[50%]'>
-            <h1 className='text-4xl font-extrabold'>High-speed downloading</h1>
-            <p>
-              Experience lightning fast downloading with our High-Speed Download
-              feature. Say goodbye to long wait times and slow downloads. With
-              our state-of-the-art technology, you can download your favorite
-              images in no time, allowing you to save time and get more done.
-              Say hello to a seamless and efficient downloading experience,
-              every time.
-            </p>
-          </div>
+        <div className='w-full '>
+          <div className='max-w-[1240px] mx-auto justify-center items-center sm:grid sm:grid-cols-3 py-20 px-12'>
+            <div className='mx-auto p-4 col-span-2 flex flex-col justify-center items-center'>
+              <h1 className=' sm:text-4xl text-3xl font-extrabold'>High-speed downloading</h1>
+              <p>
+                Experience lightning fast downloading with our High-Speed Download
+                feature. Say goodbye to long wait times and slow downloads. With
+                our state-of-the-art technology, you can download your favorite
+                images in no time, allowing you to save time and get more done.
+                Say hello to a seamless and efficient downloading experience,
+                every time.
+              </p>
+            </div>
+            <div className='text-[10rem] flex items-center justify-center'>
+            <AiOutlineCloudDownload
+              color='FF2E00'
+            />
+            </div>
 
-          <AiOutlineCloudDownload
-            color='FF2E00'
-            size={200}
-          />
-        </div>
-
-        <div className='flex p-24 items-center justify-between bg-[#FF2E00]'>
-          <AiOutlineSmile
-            color='ffffff'
-            size={200}
-          />
-
-          <div className='flex flex-col gap-5 text-white w-[50%]'>
-            <h1 className='text-4xl font-extrabold'>
-              No-Registration Required
-            </h1>
-            <p>
-              Say goodbye to the hassle of registering for an account just to
-              download images. Our website is designed to provide an effortless
-              and convenient experience to our users. With our 'No Registration
-              Required' feature, you can directly download images without any
-              added steps. Simply search, preview and download - it's that easy!
-            </p>
           </div>
         </div>
 
-        <div className='flex p-24 items-center justify-around '>
-          <div className='flex flex-col gap-5 w-[50%]'>
-            <h1 className='text-4xl font-extrabold'>Secure Downloading</h1>
+        <div className='w-full bg-[#FF2E00]'>
+            <div className='max-w-[1240px] mx-auto justify-center items-center sm:grid sm:grid-cols-3 py-28 px-16'>
+            <div className='text-[10rem] flex justify-center items-center'>
+                <AiOutlineSmile
+                color='ffffff'
+                />
+              </div>
+
+            <div className='mx-auto p-4 col-span-2 flex flex-col justify-center items-center text-white'>
+                <h1 className='text-4xl font-extrabold'>
+                  No-Registration Required
+                </h1>
+                <p>
+                  Say goodbye to the hassle of registering for an account just to
+                  download images. Our website is designed to provide an effortless
+                  and convenient experience to our users. With our 'No Registration
+                  Required' feature, you can directly download images without any
+                  added steps. Simply search, preview and download - it's that easy!
+                </p>
+              </div>
+            </div>
+        </div>
+
+        <div className='w-full'>
+        <div className='max-w-[1240px] mx-auto justify-center items-center sm:grid sm:grid-cols-3 py-20 px-16'>
+            <div className='mx-auto p-4 col-span-2 flex flex-col justify-center items-center'>
+              <h1 className='sm:text-4xl text-3xl font-extrabold'>Secure Downloading</h1>
             <p>
               Your security is our top priority. With our Secure Download
               feature, you can be assured that your downloading experience is
@@ -172,15 +188,18 @@ export default function Home() {
             </p>
           </div>
 
+            <div className='text-[10rem] flex justify-center items-center'>
           <AiOutlineUnlock
             color='FF2E00'
-            size={200}
-          />
+            />
+          </div>
+        </div>
         </div>
       </section>
 
       <section id='dmca'>
-        <div className='bg-black text-white px-40 py-10'>
+        <div className='w-full bg-black text-white'>
+          <div className='max-w-[1240px] mx-auto justify-center items-center px-16 py-10'>
           <h1 className='text-5xl font-bold text-center'>DMCA</h1>
           <p className='my-5'>
             You are solely responsible for the data (e.g. URLs) that you send to
@@ -219,6 +238,7 @@ export default function Home() {
             appropriate venue. If you have any issues, please contact the
             service provider.
           </p>
+        </div>
         </div>
       </section>
     </>
