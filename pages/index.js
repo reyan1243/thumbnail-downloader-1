@@ -94,35 +94,47 @@ export default function Home() {
 
           {/* {error && <div className='text-3xl text-[#DE1B55] '>{error}</div>} */}
 
-          <div className=' mx-auto max-w-[1240px] h-[22rem] sm:mt-2 md:mt-12 mt-[0.2rem]'>
+          <div className=' mx-auto max-w-[1240px]  sm:mt-2 md:mt-12 mt-[0.2rem]'>
             <DownloadSection ytimage={ytimage} />
           </div>
 
-          {/* <div className=' flex items-center justify-center gap-10'>
-            <div className='flex flex-col items-center justify-center'>
+          
+          {ytimage === null?
+            <div className='w-full  md:mt-[4rem] lg:mt-[6.5rem] sm:mt-[8rem] mt-[8.8rem]'>
+          <div className='max-w-[1240px] mx-auto sm:text-xl text-sm font-bold md:text-2xl flex items-center justify-center  sm:gap-10 gap-2 px-1 '>
+              <div className='grid grid-rows-2 text-center  items-center justify-center'>
               <AiOutlineCloudDownload
                 color='FF2E00'
-                // size={50}
+                className='flex mx-auto'
+                size={50}
               />
-              <p className='text-xl'>High-speed downloading</p>
+              <p >High-speed downloading</p>
             </div>
 
-            <div className='flex flex-col items-center justify-center'>
+                <div className='grid grid-rows-2 text-center items-center justify-center'>
               <AiOutlineSmile
                 color='FF2E00'
-                // size={50}
+                className='flex mx-auto'
+                size={50}
               />
-              <p className='text-xl'>No registration required</p>
+              <p>No registration required</p>
             </div>
 
-            <div className='flex flex-col items-center justify-center'>
+                <div className='grid grid-rows-2 text-center items-center justify-center'>
               <AiOutlineUnlock
                 color='FF2E00'
-                // size={50}
+                    className='flex mx-auto'
+                size={50}
               />
-              <p className='text-xl'>Secure downloading</p>
+              <p>Secure downloading</p>
             </div>
-          </div> */}
+          </div>
+          </div>
+
+          :
+          <></>
+          }
+
         </div>
       </section>
       <section
